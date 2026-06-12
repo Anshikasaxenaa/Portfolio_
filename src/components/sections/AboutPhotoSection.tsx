@@ -91,10 +91,10 @@ export function AboutPhotoSection() {
               Crafting <span className="gradient-text">digital experiences</span> with precision.
             </h2>
             <p className="text-lg text-text-secondary leading-relaxed">
-              I am a final-year B.Tech CSE student passionate about bridging the gap between beautiful design and robust engineering. Whether it's architecting a complex backend or perfecting a micro-interaction on the frontend, I obsess over the details.
+              I am a final-year B.Tech CSE student passionate about bridging the gap between beautiful design and robust engineering. Whether it&apos;s architecting a complex backend or perfecting a micro-interaction on the frontend, I obsess over the details.
             </p>
             <p className="text-lg text-text-secondary leading-relaxed">
-              When I'm not writing code, you can find me exploring new UI trends, solving algorithmic challenges, or contributing to open-source projects.
+              When I&apos;m not writing code, you can find me exploring new UI trends, solving algorithmic challenges, or contributing to open-source projects.
             </p>
           </motion.div>
 
