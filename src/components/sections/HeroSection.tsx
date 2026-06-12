@@ -97,7 +97,7 @@ export function HeroSection() {
             <span className="flex items-center gap-1.5 rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5 text-xs font-medium text-accent-400">
               <Sparkles size={11} className="animate-pulse" />
               {/* CHANGE: Your availability status */}
-              Open to SDE & Frontend Roles · 2025
+              Open to SDE & Frontend Roles · 2026
             </span>
             <span className="flex items-center gap-1 text-xs text-text-muted">
               <MapPin size={11} />
@@ -263,8 +263,8 @@ export function HeroSection() {
                 {[
                   // CHANGE: Your real numbers
                   { label: "Projects", value: "10+",   color: "text-accent-400" },
-                  { label: "DSA",      value: "350+",  color: "text-emerald-400" },
-                  { label: "GitHub",   value: "800+",  color: "text-violet-400" },
+                  { label: "DSA",      value: "200+",  color: "text-emerald-400" },
+                  { label: "GitHub",   value: "150+",  color: "text-violet-400" },
                 ].map(({ label, value, color }) => (
                   <div key={label} className="rounded-lg bg-canvas-muted p-3 text-center">
                     <div className={`text-lg font-bold font-display ${color}`}>{value}</div>
