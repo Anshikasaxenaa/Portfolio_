@@ -24,16 +24,16 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
-  { label: "About",    href: "#hero" },
-  { label: "Skills",   href: "#skills" },
-  { label: "Journey",  href: "#timeline" },
-  { label: "Work",     href: "#projects" },
-  { label: "Contact",  href: "#contact" },
+  { label: "About", href: "#hero" },
+  { label: "Skills", href: "#skills" },
+  { label: "Journey", href: "#timeline" },
+  { label: "Work", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
-  const [isScrolled,    setIsScrolled]    = useState(false);
-  const [mobileOpen,    setMobileOpen]    = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
   // ── Scroll detection for glassmorphism backdrop ──────────────
@@ -46,12 +46,14 @@ export function Navbar() {
   // ── Active section highlighting ──────────────────────────────
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
-    const observers  = sectionIds.map((id) => {
+    const observers = sectionIds.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { threshold: 0.3 }
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.3 },
       );
       obs.observe(el);
       return obs;
@@ -71,7 +73,7 @@ export function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
             ? "py-3 glass border-b border-canvas-border/50"
-            : "py-5 bg-transparent"
+            : "py-5 bg-transparent",
         )}
       >
         <nav className="section-container flex items-center justify-between">
@@ -84,7 +86,7 @@ export function Navbar() {
             whileTap={{ scale: 0.98 }}
           >
             {/* CHANGE: Your initials or name */}
-            <span className="gradient-text">[YN]</span>
+            <span className="gradient-text">[ANSHIKA SAXENA]</span>
             <span className="ml-2 text-text-secondary text-sm font-mono">
               .dev
             </span>
@@ -102,7 +104,7 @@ export function Navbar() {
                       "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
                       isActive
                         ? "text-text-primary"
-                        : "text-text-secondary hover:text-text-primary"
+                        : "text-text-secondary hover:text-text-primary",
                     )}
                     whileHover={{ scale: 1.02 }}
                   >
@@ -112,7 +114,11 @@ export function Navbar() {
                       <motion.div
                         className="absolute bottom-0.5 left-4 right-4 h-[2px] rounded-full bg-accent-500"
                         layoutId="nav-underline"
-                        transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                        transition={{
+                          type: "spring",
+                          bounce: 0.25,
+                          duration: 0.5,
+                        }}
                       />
                     )}
                   </motion.button>
@@ -125,7 +131,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             <MagneticButton
-              href={personalInfo.resumeUrl}
+              href="/resume.pdf"
               variant="secondary"
               className="text-xs gap-1.5 px-4 py-2"
             >
@@ -155,7 +161,7 @@ export function Navbar() {
             className="fixed inset-0 z-40 pt-20 glass md:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{   opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
           >
             <nav className="section-container py-8 flex flex-col gap-2">
@@ -178,7 +184,7 @@ export function Navbar() {
                 transition={{ delay: 0.35 }}
               >
                 <MagneticButton
-                  href={personalInfo.resumeUrl}
+                  href="/resume.pdf"
                   variant="primary"
                   className="w-full justify-center"
                 >
