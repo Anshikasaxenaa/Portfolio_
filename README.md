@@ -11,4 +11,8 @@ https://yourportfolio.vercel.app
 - Next.js
 - TypeScript
 - Tailwind CSS
+<<<<<<< HEAD
 - Vercel
+=======
+- Vercel
+>>>>>>> 9061e08c40de64b6dc42c065df71daf4bb9c1bc6
