@@ -1,32 +1,30 @@
-import { HeroSection }       from "@/components/sections/HeroSection";
-import { AboutPhotoSection } from "@/components/sections/AboutPhotoSection";
-import { TechStackSection }   from "@/components/sections/TechStackSection";
-import { TimelineSection }    from "@/components/sections/TimelineSection";
-import { ProjectsSection }    from "@/components/sections/ProjectSection";
-import { ContactSection }     from "@/components/sections/ContactSection";
+import CustomCursor from "@/components/CustomCursor";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
+import Work from "@/components/Work";
+import Contact from "@/components/Contact";
+import BackToTop from "@/components/BackToTop";
 
-/**
- * HOME PAGE — Single-page portfolio
- * 
- * All sections are assembled here. Each is a self-contained component
- * with its own Framer Motion scroll animations, so load order is safe.
- * 
- * Section order:
- *  1. Hero        — explosive intro, CTA
- *  2. Tech Stack  — Bento grid of skills
- *  3. Timeline    — journey / experience
- *  4. Projects    — deep-dive case studies
- *  5. Contact     — glassmorphism form
- */
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <AboutPhotoSection />
-      <TechStackSection />
-      <TimelineSection />
-      <ProjectsSection />
-      <ContactSection />
-    </>
+    <main className="relative bg-warm-paper bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(194,109,77,0.1),rgba(255,255,255,0))] overflow-hidden">
+      {/* Dot Grid Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(#8c8279_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+      
+      <CustomCursor />
+      <Navbar />
+      <div className="relative z-10">
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Work />
+        <Contact />
+      </div>
+      <BackToTop />
+    </main>
   );
 }
