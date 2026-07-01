@@ -1,69 +1,210 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaLinkedin, FaXTwitter, FaArrowRight, FaPaperPlane, FaCircleCheck } from "react-icons/fa6";
+import MagneticElement from "./ui/MagneticElement";
 
 export default function Contact() {
   const currentYear = new Date().getFullYear();
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    // Simulate sending
+    setTimeout(() => setStatus("success"), 1500);
+  };
 
   return (
-    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden bg-warm-paper">
       {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-terracotta-subtle rounded-[100%] blur-3xl -z-10 opacity-50" />
+      <div className="absolute bottom-0 right-0 w-3/4 h-1/2 bg-sage/10 rounded-[100%] blur-3xl -z-10 pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-5xl md:text-7xl font-heading font-bold mb-8 text-warm-ink">
-            Let's <span className="text-terracotta">Work Together</span>
-          </h2>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-start">
           
-          <div className="mb-12">
-            <motion.a
-              href="mailto:anshikasaxena314@gmail.com"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-10 py-5 bg-terracotta hover:bg-terracotta-light text-warm-paper rounded-full text-xl font-bold shadow-md transition-colors"
-            >
-              Say Hi 👋
-            </motion.a>
-          </div>
-          
-          <a 
-            href="mailto:anshikasaxena314@gmail.com" 
-            className="group relative inline-block text-xl md:text-2xl font-medium text-warm-charcoal hover:text-terracotta transition-all duration-300 mb-16"
+          {/* ── LEFT COLUMN: Info ──────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-12"
           >
-            anshikasaxena314@gmail.com
-            <div className="absolute -bottom-2 left-0 w-0 h-[2px] bg-terracotta group-hover:w-full transition-all duration-700" />
-          </a>
+            <div>
+              <h2 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-warm-ink">
+                Let's <span className="text-terracotta">Talk</span>
+              </h2>
+              <p className="text-warm-taupe text-lg max-w-sm">
+                Have a project in mind, a job opportunity, or just want to say hi? I'd love to hear from you.
+              </p>
+            </div>
 
-          <div className="flex justify-center gap-6 mb-24">
-            {[
-              { icon: FaGithub, href: "https://github.com/Anshikasaxenaa" },
-              { icon: FaLinkedin, href: "https://linkedin.com/in/anshika-saxena-87119a267" },
-              { icon: FaXTwitter, href: "#" },
-            ].map((social, idx) => (
-              <motion.a
-                key={idx}
-                href={social.href}
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-14 h-14 rounded-full border border-warm-sand bg-warm-cream flex items-center justify-center text-warm-taupe hover:text-terracotta hover:border-terracotta transition-colors relative group"
-              >
-                <div className="absolute inset-0 rounded-full bg-terracotta-subtle opacity-0 group-hover:opacity-100 transition-opacity blur-md -z-10" />
-                <social.icon className="text-xl" />
-              </motion.a>
-            ))}
-          </div>
+            <div className="pt-8 border-t border-warm-sand">
+              <div className="relative z-10">
+                <p className="text-sm text-warm-taupe uppercase tracking-widest font-semibold mb-3">Direct Contact</p>
+                <a
+                  href="mailto:anshikasaxena314@gmail.com"
+                  className="text-2xl md:text-3xl font-heading font-medium text-warm-ink hover:text-terracotta transition-colors block mb-2"
+                >
+                  anshikasaxena314@gmail.com
+                </a>
+                <p className="text-sm text-warm-taupe">Typical response time: &lt;24 hours</p>
+              </div>
+            </div>
 
-          <p className="text-warm-taupe text-sm">
-            © {currentYear} Anshika Saxena. Crafted with precision.
-          </p>
-        </motion.div>
+            <div>
+              <p className="mb-6 text-sm font-semibold text-warm-taupe uppercase tracking-widest">
+                Also find me on
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  { label: "GitHub", href: "https://github.com/Anshikasaxenaa", icon: FaGithub },
+                  { label: "LinkedIn", href: "https://linkedin.com/in/anshika-saxena-87119a267", icon: FaLinkedin },
+                  { label: "Twitter / X", href: "#", icon: FaXTwitter },
+                ].map((social) => (
+                  <MagneticElement key={social.label} strength={15}>
+                    <motion.a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-4 rounded-2xl border border-warm-sand bg-warm-cream p-4 text-warm-taupe hover:text-terracotta hover:border-terracotta transition-all duration-300 shadow-sm w-full block"
+                      whileHover={{ x: 4 }}
+                    >
+                      <div className="flex items-center w-full">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-warm-paper text-warm-ink group-hover:text-terracotta transition-colors">
+                          <social.icon className="text-xl" />
+                        </span>
+                        <span className="font-medium text-warm-ink ml-4">{social.label}</span>
+                        <FaArrowRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    </motion.a>
+                  </MagneticElement>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── RIGHT COLUMN: Form ─────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="p-4 md:p-8 relative"
+          >
+            <AnimatePresence mode="wait">
+              {status === "success" ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center min-h-[450px] text-center"
+                >
+                  <motion.div animate={{ rotate: [0, -10, 10, 0] }} transition={{ duration: 0.5, delay: 0.2 }}>
+                    <FaCircleCheck className="text-terracotta text-5xl mb-4" />
+                  </motion.div>
+                  <h3 className="text-3xl font-heading font-bold text-warm-ink mb-4">Message Sent!</h3>
+                  <p className="text-warm-taupe mb-8">Thanks for reaching out. I'll get back to you shortly.</p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="px-6 py-2 bg-warm-paper border border-warm-sand text-warm-charcoal rounded-full font-medium hover:text-terracotta transition-colors"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit}
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-col gap-6"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="name" className="text-sm font-semibold text-warm-ink uppercase tracking-wider">Name</label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        className="w-full bg-transparent border-b-2 border-warm-sand py-3 text-warm-charcoal placeholder:text-warm-taupe/40 focus:outline-none focus:border-terracotta transition-colors rounded-none"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="email" className="text-sm font-semibold text-warm-ink uppercase tracking-wider">Email</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        className="w-full bg-transparent border-b-2 border-warm-sand py-3 text-warm-charcoal placeholder:text-warm-taupe/40 focus:outline-none focus:border-terracotta transition-colors rounded-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2 mt-4">
+                    <label htmlFor="subject" className="text-sm font-semibold text-warm-ink uppercase tracking-wider">Subject</label>
+                    <input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      required
+                      value={form.subject}
+                      onChange={handleChange}
+                      placeholder="What is this regarding?"
+                      className="w-full bg-transparent border-b-2 border-warm-sand py-3 text-warm-charcoal placeholder:text-warm-taupe/40 focus:outline-none focus:border-terracotta transition-colors rounded-none"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2 mt-4">
+                    <label htmlFor="message" className="text-sm font-semibold text-warm-ink uppercase tracking-wider">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={4}
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Tell me about your project..."
+                      className="w-full bg-transparent border-b-2 border-warm-sand py-3 text-warm-charcoal placeholder:text-warm-taupe/40 focus:outline-none focus:border-terracotta transition-colors rounded-none resize-none"
+                    />
+                  </div>
+
+                  <div className="mt-4 flex justify-end">
+                    <button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="px-8 py-4 bg-terracotta hover:bg-terracotta-light text-warm-paper rounded-full font-bold shadow-md transition-all flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {status === "sending" ? "Sending..." : "Send Message"}
+                      {status !== "sending" && <FaPaperPlane className="text-sm" />}
+                    </button>
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+
+        {/* ── FOOTER ─────────────────────────────────── */}
+        <div className="mt-32 pt-8 border-t border-warm-sand flex flex-col md:flex-row items-center justify-between gap-4 text-warm-taupe text-sm">
+          <p>© {currentYear} Anshika Saxena. Crafted with precision.</p>
+          <p>Built with Next.js, Tailwind & Framer Motion</p>
+        </div>
       </div>
     </footer>
   );

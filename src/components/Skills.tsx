@@ -2,26 +2,26 @@
 
 import { motion } from "framer-motion";
 import { skillsData } from "@/data/portfolioData";
+import { FaReact, FaNodeJs, FaJava, FaGitAlt, FaRobot } from "react-icons/fa6";
 import { 
-  FaReact, FaNodeJs, FaPython, FaJava, FaDocker, 
-  FaGitAlt, FaAws, FaFigma 
-} from "react-icons/fa6";
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb } from "react-icons/si";
+  SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, 
+  SiJavascript, SiExpress, SiMysql 
+} from "react-icons/si";
 
 export default function Skills() {
   const marqueeIcons = [
+    { icon: FaJava, name: "Java" },
+    { icon: SiJavascript, name: "JavaScript" },
+    { icon: SiTypescript, name: "TypeScript" },
     { icon: FaReact, name: "React" },
     { icon: SiNextdotjs, name: "Next.js" },
-    { icon: SiTypescript, name: "TypeScript" },
     { icon: FaNodeJs, name: "Node.js" },
-    { icon: FaJava, name: "Java" },
+    { icon: SiExpress, name: "Express" },
+    { icon: SiTailwindcss, name: "Tailwind CSS" },
     { icon: SiMongodb, name: "MongoDB" },
-    { icon: SiTailwindcss, name: "Tailwind" },
-    { icon: FaPython, name: "Python" },
-    { icon: FaDocker, name: "Docker" },
+    { icon: SiMysql, name: "MySQL" },
+    { icon: FaRobot, name: "Gen AI & LLMs" },
     { icon: FaGitAlt, name: "Git" },
-    { icon: FaAws, name: "AWS" },
-    { icon: FaFigma, name: "Figma" },
   ];
 
   return (
@@ -74,10 +74,11 @@ export default function Skills() {
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 100, rotateX: 45 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: "top" }}
           className="mb-16 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-warm-ink">
@@ -90,12 +91,22 @@ export default function Skills() {
           {skillsData.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-warm-cream border border-warm-sand rounded-3xl p-8 hover:border-terracotta/30 transition-colors shadow-sm"
+              initial={{ opacity: 0, y: 60, rotateX: 45 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 1, delay: 0.2 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformOrigin: "top" }}
+              className="bg-warm-cream border border-warm-sand rounded-3xl p-8 hover:border-terracotta/30 transition-colors shadow-sm relative overflow-hidden"
             >
+              {/* Choreographed border line */}
+              <motion.div 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.8, delay: 0.6 + index * 0.15, ease: "easeInOut" }}
+                style={{ originX: 0 }}
+                className="absolute top-0 left-0 w-full h-1 bg-terracotta/20"
+              />
               <h3 className="text-xl font-heading font-bold text-warm-ink mb-6 pb-4 border-b border-warm-sand">
                 {category.category}
               </h3>

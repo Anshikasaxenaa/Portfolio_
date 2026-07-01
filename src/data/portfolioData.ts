@@ -2,34 +2,38 @@ export const projects = [
   {
     id: 1,
     title: "AI-Powered Interview Platform",
+    description: "An intelligent mock interview platform using large language models. It provides real-time feedback, analyzes facial expressions, and generates dynamic technical questions based on the candidate's resume.",
     tags: ["React", "Node.js", "Express", "MongoDB", "AI APIs"],
-    image: "bg-gradient-to-br from-blue-900 to-violet-900",
+    image: "/project-1.jpg", 
+    imageGradient: "from-terracotta-subtle via-warm-cream to-sage-light",
     link: "https://github.com/Anshikasaxenaa/careerpilot-ai",
-    colSpan: "md:col-span-2",
   },
   {
     id: 2,
     title: "Portfolio Website",
+    description: "A meticulously crafted personal portfolio showcasing advanced Framer Motion animations, a warm editorial design aesthetic, and performant server-side rendering.",
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
-    image: "bg-gradient-to-bl from-emerald-900 to-cyan-900",
+    image: "/project-2.png", 
+    imageGradient: "from-warm-cream via-terracotta-subtle to-warm-sand",
     link: "https://anshika-saxena-portfolio.vercel.app/",
-    colSpan: "md:col-span-1",
   },
   {
     id: 3,
     title: "Post App",
+    description: "A full-stack social media application enabling users to share visual stories. Features secure authentication, real-time image processing, and a highly responsive masonry layout.",
     tags: ["React", "Node.js", "MongoDB", "ImageKit"],
-    image: "bg-gradient-to-tr from-orange-900 to-rose-900",
+    image: "/project-3.png", 
+    imageGradient: "from-sage-light via-warm-cream to-terracotta-subtle",
     link: "https://github.com/Anshikasaxenaa/Post_app",
-    colSpan: "md:col-span-1",
   },
   {
     id: 4,
     title: "Image Animation",
+    description: "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
     tags: ["HTML", "CSS", "JavaScript"],
-    image: "bg-gradient-to-tl from-pink-900 to-purple-900",
+    image: "/project-4.jpg", 
+    imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     link: "https://github.com/Anshikasaxenaa",
-    colSpan: "md:col-span-2",
   }
 ];
 
@@ -89,3 +93,22 @@ export const skillsData = [
     items: ["Problem Solving", "Team Collaboration", "Communication"]
   }
 ];
+
+export const aboutContent = {
+  statement: "I believe digital products should feel like a conversation — intelligent, intuitive, and deeply human.",
+  bio: "I'm a creative developer who lives at the intersection of logic and imagination. With a strong foundation in Data Structures and Full Stack development, and a current focus on Agentic AI, I build applications that don't just function—they reason and resonate. Every line of code I write is intentional, every architecture considered.",
+  pillars: [
+    { title: "Craft", description: "Treating every line of code as an opportunity to build robust, scalable architectures.", shape: "circle" },
+    { title: "Clarity", description: "Distilling complex algorithmic problems into elegant, intuitive digital solutions.", shape: "square" },
+    { title: "Curiosity", description: "Constantly exploring the frontiers of Agentic AI, DevOps, and cloud technologies.", shape: "line" },
+  ],
+  personal: {
+    text: "When I'm not pushing pixels or solving LeetCode algorithms, you'll find me exploring new AI frameworks and diving into cloud engineering.",
+    interests: ["Competitive Programming", "Agentic AI", "Cloud Tech", "Problem Solving"],
+  },
+  highlight: {
+    type: "stat",
+    statValue: "150+",
+    statLabel: "DSA problems solved across competitive coding platforms.",
+  },
+};

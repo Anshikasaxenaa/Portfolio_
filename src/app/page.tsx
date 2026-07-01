@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-import Work from "@/components/Work";
+import ProjectSection from "@/components/ProjectSection";
 import Contact from "@/components/Contact";
 import BackToTop from "@/components/BackToTop";
 
@@ -21,7 +21,7 @@ export default function Home() {
         <About />
         <Experience />
         <Skills />
-        <Work />
+        <ProjectSection />
         <Contact />
       </div>
       <BackToTop />

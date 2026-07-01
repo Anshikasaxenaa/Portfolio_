@@ -9,10 +9,11 @@ export default function Experience() {
     <section id="experience" className="py-24 md:py-32 relative">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 100, rotateX: 45 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: "top" }}
           className="mb-16 text-center md:text-left"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-warm-ink">
@@ -32,17 +33,30 @@ export default function Experience() {
             </div>
             
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-[1.4rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-warm-sand before:to-transparent hidden-before">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-warm-sand/50 z-0" />
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                style={{ originY: 0 }}
+                className="absolute left-6 top-0 bottom-0 w-px bg-warm-sand/50 z-0" 
+              />
               {experienceData.map((exp, index) => (
                 <motion.div
                   key={exp.id}
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: index * 0.15 }}
+                  initial={{ opacity: 0, x: -40, rotateX: 45 }}
+                  whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
+                  viewport={{ once: false, margin: "-100px" }}
+                  transition={{ duration: 1, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transformOrigin: "top" }}
                   className="relative z-10 pl-16"
                 >
-                  <div className="absolute left-4 top-2 w-4 h-4 rounded-full bg-warm-paper border-4 border-terracotta" />
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.8 + index * 0.15 }}
+                    className="absolute left-4 top-2 w-4 h-4 rounded-full bg-warm-paper border-4 border-terracotta" 
+                  />
                   <div className="bg-warm-cream border border-warm-sand p-8 rounded-3xl hover:border-terracotta/50 transition-colors shadow-sm">
                     <span className="inline-block px-3 py-1 bg-terracotta-subtle text-terracotta-dark text-sm font-semibold rounded-full mb-4">
                       {exp.date}
@@ -73,17 +87,30 @@ export default function Experience() {
             </div>
             
             <div className="space-y-8 relative">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-warm-sand/50 z-0" />
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                style={{ originY: 0 }}
+                className="absolute left-6 top-0 bottom-0 w-px bg-warm-sand/50 z-0" 
+              />
               {educationData.map((edu, index) => (
                 <motion.div
                   key={edu.id}
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: index * 0.15 }}
+                  initial={{ opacity: 0, x: 40, rotateX: 45 }}
+                  whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
+                  viewport={{ once: false, margin: "-100px" }}
+                  transition={{ duration: 1, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transformOrigin: "top" }}
                   className="relative z-10 pl-16"
                 >
-                  <div className="absolute left-4 top-2 w-4 h-4 rounded-full bg-warm-paper border-4 border-sage" />
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.8 + index * 0.15 }}
+                    className="absolute left-4 top-2 w-4 h-4 rounded-full bg-warm-paper border-4 border-sage" 
+                  />
                   <div className="bg-warm-cream border border-warm-sand p-8 rounded-3xl hover:border-sage/50 transition-colors shadow-sm">
                     <span className="inline-block px-3 py-1 bg-sage-light/20 text-sage-dark text-sm font-semibold rounded-full mb-4">
                       {edu.date}

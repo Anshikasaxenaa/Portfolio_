@@ -3,17 +3,39 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
+import MagneticElement from "./ui/MagneticElement";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Setup intersection observer for active section tracking
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -70% 0px" }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const navLinks = [
@@ -37,23 +59,31 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-warm-taupe hover:text-terracotta transition-colors text-sm font-medium"
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.substring(1);
+            return (
+              <MagneticElement key={link.name}>
+                <a
+                  href={link.href}
+                  className={`transition-colors text-sm font-medium px-3 py-1 block rounded-full ${
+                    isActive ? "text-terracotta bg-terracotta/10" : "text-warm-taupe hover:text-terracotta"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </MagneticElement>
+            );
+          })}
+          <MagneticElement strength={30}>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-terracotta hover:bg-terracotta-light text-warm-paper px-6 py-2 rounded-full text-sm font-semibold transition-colors inline-block"
             >
-              {link.name}
-            </a>
-          ))}
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-terracotta hover:bg-terracotta-light text-warm-paper px-6 py-2 rounded-full text-sm font-semibold transition-colors"
-          >
-            Let's Talk
-          </motion.a>
+              Let's Talk
+            </motion.a>
+          </MagneticElement>
         </nav>
 
         {/* Mobile Nav Toggle */}
@@ -74,16 +104,21 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden absolute top-full left-0 w-full bg-warm-cream/95 backdrop-blur-xl border-b border-warm-sand flex flex-col py-6 px-6 gap-6"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-warm-ink hover:text-terracotta text-xl font-medium transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.substring(1);
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-xl font-medium transition-colors px-4 py-2 rounded-xl ${
+                    isActive ? "text-terracotta bg-terracotta/10" : "text-warm-ink hover:text-terracotta"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}

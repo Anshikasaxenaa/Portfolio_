@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
+import HoverRevealText from "./ui/HoverRevealText";
 
 export default function Hero() {
   return (
@@ -29,9 +30,19 @@ export default function Hero() {
           Available for new opportunities
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
-          I craft digital experiences at the intersection of{" "}
-          <span className="text-gradient">design and code.</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-6 text-warm-ink font-serif italic text-3xl md:text-4xl"
+        >
+          Hi, I'm Anshika Saxena.
+        </motion.div>
+
+        <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-4">
+          <HoverRevealText text="I craft digital experiences" />
+          <HoverRevealText text="at the intersection of" />
+          <HoverRevealText text="design and code." className="text-terracotta" />
         </h1>
         
         <p className="text-warm-taupe text-xl md:text-2xl font-medium max-w-2xl mb-10">
