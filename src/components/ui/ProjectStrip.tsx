@@ -7,6 +7,8 @@ interface Project {
   id: number;
   title: string;
   description: string;
+  problem?: string;
+  solution?: string;
   tags: string[];
   image: string;
   imageGradient: string;
@@ -70,10 +72,13 @@ export default function ProjectStrip({ project, index }: ProjectStripProps) {
       <div className={`relative z-10 w-full max-w-none flex flex-col md:flex-row items-center h-[280px] md:h-[350px] lg:h-[500px] ${isEven ? 'md:flex-row-reverse' : ''}`}>
         
         {/* Image Side (60%) */}
-        <div 
-          ref={imageRef}
+        <a 
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={imageRef as any}
           onMouseMove={handleMouseMove}
-          className={`relative w-full md:w-[60%] h-full overflow-hidden rounded-2xl ring-1 ring-warm-sand/50 group cursor-none ${isEven ? 'md:rounded-r-none md:rounded-l-2xl' : 'md:rounded-l-none md:rounded-r-2xl'}`}
+          className={`relative w-full block md:w-[60%] h-full overflow-hidden rounded-2xl ring-1 ring-warm-sand/50 group cursor-none ${isEven ? 'md:rounded-r-none md:rounded-l-2xl' : 'md:rounded-l-none md:rounded-r-2xl'}`}
         >
           {/* Background Gradient */}
           <div className={`absolute inset-0 bg-gradient-to-br ${project.imageGradient} opacity-80`} />
@@ -145,7 +150,7 @@ export default function ProjectStrip({ project, index }: ProjectStripProps) {
           >
             View Project
           </motion.div>
-        </div>
+        </a>
 
         {/* Content Side (40%) */}
         <div className={`w-full md:w-[40%] flex flex-col justify-center px-8 md:px-16 py-8 ${isEven ? 'items-start text-left' : 'items-end text-right'}`}>
@@ -186,10 +191,33 @@ export default function ProjectStrip({ project, index }: ProjectStripProps) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: false, margin: "-20%" }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className={`text-warm-charcoal/80 text-base leading-relaxed max-w-md mb-8 ${isEven ? 'text-left' : 'text-right'}`}
+            className={`text-warm-charcoal/90 font-medium text-base leading-relaxed max-w-md mb-6 ${isEven ? 'text-left' : 'text-right'}`}
           >
             {project.description}
           </motion.p>
+
+          {(project.problem || project.solution) && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-20%" }}
+              transition={{ duration: 0.7, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className={`flex flex-col gap-4 mb-8 max-w-md ${isEven ? 'text-left' : 'text-right'}`}
+            >
+              {project.problem && (
+                <div>
+                  <span className="text-terracotta font-semibold text-sm tracking-wide uppercase block mb-1">The Problem</span>
+                  <p className="text-warm-charcoal/70 text-sm leading-relaxed">{project.problem}</p>
+                </div>
+              )}
+              {project.solution && (
+                <div>
+                  <span className="text-sage font-semibold text-sm tracking-wide uppercase block mb-1">The Solution</span>
+                  <p className="text-warm-charcoal/70 text-sm leading-relaxed">{project.solution}</p>
+                </div>
+              )}
+            </motion.div>
+          )}
 
           <div className={`flex flex-wrap gap-2 mb-10 ${isEven ? 'justify-start' : 'justify-end'}`}>
             {project.tags.map((tag, i) => (

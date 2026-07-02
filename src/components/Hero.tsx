@@ -24,7 +24,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center">
+      <div className="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center pb-12 sm:pb-0">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-warm-sand bg-warm-cream text-warm-taupe text-sm font-medium mb-8 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
           Available for new opportunities
@@ -68,7 +68,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-10 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
       >
         <motion.a
           href="#work"

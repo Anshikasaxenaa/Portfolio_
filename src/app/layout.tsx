@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Cosmic Dark Portfolio",
+  title: "ANSHIKA",
   description: "A digital experience at the intersection of design and code.",
 };
 
