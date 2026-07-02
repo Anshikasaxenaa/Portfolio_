@@ -31,7 +31,7 @@ export const projects = [
     title: "Image Animation",
     description: "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
     tags: ["HTML", "CSS", "JavaScript"],
-    image: "/project-4.jpg", 
+    image: "/project-4.png", 
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     link: "https://github.com/Anshikasaxenaa",
   }
