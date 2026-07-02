@@ -264,7 +264,7 @@ export default function About() {
             ) : (
               <>
                 <h3 className="font-serif italic text-3xl md:text-4xl text-warm-ink leading-tight mb-4">
-                  "{(highlight as any).quote}"
+                  &ldquo;{(highlight as any).quote}&rdquo; 
                 </h3>
                 <motion.div
                   initial={{ opacity: 0 }}

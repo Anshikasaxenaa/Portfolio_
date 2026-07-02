@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6 text-warm-ink font-serif italic text-3xl md:text-4xl"
         >
-          Hi, I'm Anshika Saxena.
+          Hi, I&apos;m Anshika Saxena.
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-4">

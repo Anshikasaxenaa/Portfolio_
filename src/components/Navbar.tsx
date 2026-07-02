@@ -81,7 +81,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="bg-terracotta hover:bg-terracotta-light text-warm-paper px-6 py-2 rounded-full text-sm font-semibold transition-colors inline-block"
             >
-              Let's Talk
+              Let&apos;s Talk
             </motion.a>
           </MagneticElement>
         </nav>
@@ -124,7 +124,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="bg-terracotta text-warm-paper text-center py-3 rounded-xl font-semibold"
             >
-              Let's Talk
+              Let&apos;s Talk
             </a>
           </motion.nav>
         )}

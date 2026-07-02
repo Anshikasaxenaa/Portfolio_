@@ -39,10 +39,10 @@ export default function Contact() {
           >
             <div>
               <h2 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-warm-ink">
-                Let's <span className="text-terracotta">Talk</span>
+                Let&apos;s <span className="text-terracotta">Talk</span>
               </h2>
               <p className="text-warm-taupe text-lg max-w-sm">
-                Have a project in mind, a job opportunity, or just want to say hi? I'd love to hear from you.
+                Have a project in mind, a job opportunity, or just want to say hi? I&apos;d love to hear from you.
               </p>
             </div>
 
@@ -111,7 +111,7 @@ export default function Contact() {
                     <FaCircleCheck className="text-terracotta text-5xl mb-4" />
                   </motion.div>
                   <h3 className="text-3xl font-heading font-bold text-warm-ink mb-4">Message Sent!</h3>
-                  <p className="text-warm-taupe mb-8">Thanks for reaching out. I'll get back to you shortly.</p>
+                  <p className="text-warm-taupe mb-8">Thanks for reaching out. I&apos;ll get back to you shortly.</p>
                   <button
                     onClick={() => setStatus("idle")}
                     className="px-6 py-2 bg-warm-paper border border-warm-sand text-warm-charcoal rounded-full font-medium hover:text-terracotta transition-colors"
