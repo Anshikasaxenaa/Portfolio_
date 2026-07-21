@@ -6,7 +6,7 @@ export const projects = [
     problem: "Candidates often struggle with interview anxiety and lack realistic, personalized practice environments before crucial job interviews.",
     solution: "An intelligent platform that simulates real interviews, analyzes facial expressions, and dynamically tailors technical questions to the user's resume.",
     tags: ["React", "Node.js", "Express", "MongoDB", "AI APIs"],
-    image: "/project-1.jpg", 
+    image: "/project-1.png", 
     imageGradient: "from-terracotta-subtle via-warm-cream to-sage-light",
     link: "https://github.com/Anshikasaxenaa/careerpilot-ai",
   },
@@ -19,7 +19,7 @@ export const projects = [
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
     image: "/project-2.png", 
     imageGradient: "from-warm-cream via-terracotta-subtle to-warm-sand",
-    link: "https://anshika-saxena-portfolio.vercel.app/",
+    link: "https://anshika-saxena-portfolio.vercel.app",
   },
   {
     id: 3,
@@ -42,6 +42,33 @@ export const projects = [
     image: "/project-4.png", 
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     link: "https://github.com/Anshikasaxenaa",
+  },
+  {
+    id: 5,
+    title: "DocuWise",
+    description: "A full-stack AI-powered document management platform that enables users to securely upload, organize, summarize, and interact with documents using intelligent AI features. Built with Next.js, Node.js, Express, MongoDB, and Gemini AI.",
+
+    problem: "Managing large collections of documents and extracting key information manually is time-consuming. Existing solutions often lack AI-powered insights, secure authentication, and an intuitive document organization system.",
+
+   solution: "DocuWise combines secure JWT and Google OAuth authentication with AI-powered document summarization, intelligent search, and efficient document management in a modern, responsive interface, helping users quickly organize and understand their documents.",
+
+   tags: [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "Express.js",
+  "MongoDB",
+  "JWT",
+  "Google OAuth",
+  "Gemini AI",
+  "Tailwind CSS"
+],
+
+  image: "/project-5.png",
+
+imageGradient: "from-blue-500 via-cyan-500 to-indigo-600",
+    link: "https://docu-wise-dusky.vercel.app",
   }
 ];
 
