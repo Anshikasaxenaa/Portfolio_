@@ -1,0 +1,4 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="256" fill="#c26d4d" />
+  <text x="256" y="360" font-family="'Georgia', 'Times New Roman', serif" font-size="300" font-style="italic" font-weight="bold" fill="#faf7f2" text-anchor="middle">A</text>
+</svg>
