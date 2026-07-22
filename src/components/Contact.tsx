@@ -17,8 +17,21 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate sending
-    setTimeout(() => setStatus("success"), 1500);
+    
+    // Construct the mailto URL with form data
+    const mailtoLink = `mailto:anshikasaxena314@gmail.com?subject=${encodeURIComponent(
+      form.subject || "New Contact from Portfolio"
+    )}&body=${encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    )}`;
+    
+    // Open default mail client
+    window.location.href = mailtoLink;
+    
+    setTimeout(() => {
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    }, 500);
   };
 
   return (
