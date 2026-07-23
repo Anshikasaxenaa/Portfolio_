@@ -12,7 +12,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "AI-Powered Interview Platform",
+    title: "PrepAI - AI-Powered Interview Platform",
     description: "An intelligent mock interview platform using large language models. It provides real-time feedback, analyzes facial expressions, and generates dynamic technical questions based on the candidate's resume.",
     problem: "Candidates often struggle with interview anxiety and lack realistic, personalized practice environments before crucial job interviews.",
     solution: "An intelligent platform that simulates real interviews, analyzes facial expressions, and dynamically tailors technical questions to the user's resume.",
@@ -66,8 +66,21 @@ export const experienceData = [
     location: "Jaipur, Rajasthan",
     date: "June 2026 - Current",
     points: [
-      "Learnt and applied Agentic AI concepts to build intelligent assistants capable of reasoning, planning, and executing multi-step tasks.",
-      "Assisted in integrating AI models, APIs, and automation tools to create scalable AI-driven solutions."
+      "Built AI-powered assistants capable of multi-step reasoning and task execution.",
+      "Integrated LLM APIs and automation workflows into intelligent applications.",
+      "Collaborated on scalable AI-driven software solutions."
+    ]
+  },
+  {
+    id: 2,
+    title: "Fullstack developer",
+    company: "Cognifyz",
+    location: "Remote",
+    date: "May 2026 - June 2026",
+    points: [
+      "Developed scalable MERN applications using MongoDB, Express.js, React.js, and Node.js.",
+      "Designed REST APIs and integrated backend services with responsive frontend interfaces.",
+      "Worked on authentication, database operations, and API integration."
     ]
   }
 ];
@@ -76,16 +89,23 @@ export const educationData = [
   {
     id: 1,
     degree: "Bachelor of Technology - Computer Science",
-    institution: "Arya College of engineering and IT",
+    institution: "Arya College of Engineering and IT",
     date: "2023 - 2027",
     cgpa: "8.7"
+  },
+  {
+    id: 2,
+    degree: "Senior Secondary (Class XII)",
+    institution: "Maharaja Agarsen Public School (ICSE)",
+    date: "2023",
+    cgpa: "86%"
   }
 ];
 
 export const skillsData = [
   {
     category: "Technical Skills",
-    items: ["Java", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"]
+    items: ["Java", "Python", "JavaScript", "TypeScript", "SQL"]
   },
   {
     category: "Frameworks & Libraries",
@@ -96,16 +116,16 @@ export const skillsData = [
     items: ["MySQL", "MongoDB"]
   },
   {
+    category: "Software Engineering",
+    items: ["REST APIs", "JWT Authentication", "Git", "GitHub", "Postman"]
+  },
+  {
     category: "AI",
-    items: ["Prompt Engineering", "Generative AI", "LLMs", "OpenAI API Integration"]
+    items: ["Prompt Engineering", "OpenAI APIs", "LLM Integration", "Agentic AI"]
   },
   {
     category: "Core CS Subjects",
     items: ["DSA", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
-  },
-  {
-    category: "Soft Skills",
-    items: ["Problem Solving", "Team Collaboration", "Communication"]
   }
 ];
 
@@ -123,7 +143,7 @@ export const aboutContent = {
   },
   highlight: {
     type: "stat",
-    statValue: "150+",
+    statValue: "170+",
     statLabel: "DSA problems solved across competitive coding platforms.",
   },
 };
