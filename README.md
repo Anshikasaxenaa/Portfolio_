@@ -26,9 +26,9 @@ It focuses heavily on **micro-interactions** and **choreographed animations**, p
 ## ✦ Key Features
 
 - **Magnetic UI Elements:** Navigation links and buttons feature custom physical mouse-tracking (magnetic) effects for a highly tactile feel.
-- **Alternating Panoramic Projects:** The work section is engineered using alternating full-width panoramic strips, complete with a terracotta "curtain reveal", 3D mouse tilt, and a custom cursor pill that physically follows the pointer.
+- **Bento Grid Layout:** The work section is engineered using a highly responsive, asymmetric Bento Box grid with cinematic glassmorphic hover reveals and deep contrast scaling.
 - **Organic Shape Shifting:** The "About" section utilizes continuously morphing, asymmetric `border-radius` values to make the portrait frame feel alive and breathing.
-- **SVG Fractal Noise:** Mathematical noise overlays are applied across the gradient backgrounds to provide a rich, printed-paper grain texture.
+- **Editorial & Technical Aesthetic:** A global dotted graph-paper background (via CSS radial gradients) provides a highly technical yet editorial printed-paper feel across the entire experience.
 - **Intersection Observers:** A custom intersection observer tracks the user's scroll position to dynamically highlight the active section in the sticky navbar.
 
 ## ✦ Tech Stack
@@ -80,7 +80,7 @@ All dynamic content and copy are extracted out of the JSX and managed centrally.
 src/
 ├── app/                  # Next.js App Router layout and pages
 ├── components/           # Core React components (Hero, About, Navbar)
-│   └── ui/               # Reusable micro-components (ProjectStrip, MagneticElement)
+│   └── ui/               # Reusable micro-components (BentoProjectCard, MagneticElement)
 ├── data/                 
 │   └── portfolioData.ts  # Centralized data (Projects, Skills, Bio)
 └── styles/
