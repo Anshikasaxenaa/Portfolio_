@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    title: "DocuWise",
+    description: "A full-stack AI-powered document management platform that enables users to securely upload, organize, summarize, and interact with documents using intelligent AI features. Built with Next.js, Node.js, Express, MongoDB, and Gemini AI.",
+    problem: "Managing large collections of documents and extracting key information manually is time-consuming. Existing solutions often lack AI-powered insights, secure authentication, and an intuitive document organization system.",
+    solution: "DocuWise combines secure JWT and Google OAuth authentication with AI-powered document summarization, intelligent search, and efficient document management in a modern, responsive interface, helping users quickly organize and understand their documents.",
+    tags: ["Next.js", "React", "TypeScript", "Node.js", "Express.js", "MongoDB", "JWT", "Google OAuth", "Gemini AI", "Tailwind CSS"],
+    image: "/project-5.png",
+    imageGradient: "from-blue-500 via-cyan-500 to-indigo-600",
+    link: "https://docu-wise-dusky.vercel.app",
+  },
+  {
+    id: 2,
     title: "AI-Powered Interview Platform",
     description: "An intelligent mock interview platform using large language models. It provides real-time feedback, analyzes facial expressions, and generates dynamic technical questions based on the candidate's resume.",
     problem: "Candidates often struggle with interview anxiety and lack realistic, personalized practice environments before crucial job interviews.",
@@ -11,7 +22,7 @@ export const projects = [
     link: "https://github.com/Anshikasaxenaa/careerpilot-ai",
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio Website",
     description: "A meticulously crafted personal portfolio showcasing advanced Framer Motion animations, a warm editorial design aesthetic, and performant server-side rendering.",
     problem: "Standard portfolios often feel static and fail to communicate a developer's unique design sensibilities and engineering rigor.",
@@ -22,7 +33,7 @@ export const projects = [
     link: "https://anshika-saxena-portfolio.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Post App",
     description: "A full-stack social media application enabling users to share visual stories. Features secure authentication, real-time image processing, and a highly responsive masonry layout.",
     problem: "Users needed a highly responsive, secure platform to share visual stories without compromising on image load times or layout stability.",
@@ -33,7 +44,7 @@ export const projects = [
     link: "https://github.com/Anshikasaxenaa/Post_app",
   },
   {
-    id: 4,
+    id: 5,
     title: "Image Animation",
     description: "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
     problem: "Modern web interfaces require fluid, non-intrusive micro-interactions, but relying on heavy animation libraries can severely impact performance.",
@@ -42,41 +53,10 @@ export const projects = [
     image: "/project-4.png", 
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     link: "https://github.com/Anshikasaxenaa",
-  },
-  {
-    id: 5,
-    title: "DocuWise",
-    description: "A full-stack AI-powered document management platform that enables users to securely upload, organize, summarize, and interact with documents using intelligent AI features. Built with Next.js, Node.js, Express, MongoDB, and Gemini AI.",
-
-    problem: "Managing large collections of documents and extracting key information manually is time-consuming. Existing solutions often lack AI-powered insights, secure authentication, and an intuitive document organization system.",
-
-   solution: "DocuWise combines secure JWT and Google OAuth authentication with AI-powered document summarization, intelligent search, and efficient document management in a modern, responsive interface, helping users quickly organize and understand their documents.",
-
-   tags: [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "JWT",
-  "Google OAuth",
-  "Gemini AI",
-  "Tailwind CSS"
-],
-
-  image: "/project-5.png",
-
-imageGradient: "from-blue-500 via-cyan-500 to-indigo-600",
-    link: "https://docu-wise-dusky.vercel.app",
   }
 ];
 
-export const bio = `I am Anshika Saxena, a final-year B.Tech Computer Science student with strong foundations in Data Structures Algorithms, Core Java, and Full Stack Development. I thrive at the intersection of logic and creativity, building scalable, performant, and impactful solutions.
 
-My approach combines algorithmic efficiency with structural integrity. Whether it's crafting intelligent backends with Node.js and MongoDB, or designing immersive frontend architectures in React and Next.js, I treat every project as an opportunity to push boundaries and solve real-world problems.
-
-I am an active participant in the competitive programming community with over 150+ DSA problems solved across LeetCode and coding platforms. When I'm not coding, you can find me exploring DevOps, learning new cloud technologies, or actively learning AI tools. Let's create something extraordinary together.`;
 
 export const experienceData = [
   {

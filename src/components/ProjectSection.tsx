@@ -30,10 +30,8 @@ export default function ProjectSection() {
           {projects.map((project, index) => {
             // Determine column span based on index:
             // Project 1 (index 0) is full width (2 columns)
-            // Project 2 (index 1) is half width (1 column)
-            // Project 3 (index 2) is half width (1 column)
-            // Project 4 (index 3) is full width (2 columns)
-            const isFullWidth = index === 0 || index === 3;
+            // Projects 2, 3, 4, 5 are half width (1 column) forming a 2x2 grid
+            const isFullWidth = index === 0;
             const colSpanClass = isFullWidth ? "md:col-span-2" : "md:col-span-1";
 
             return (

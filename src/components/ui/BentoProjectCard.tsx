@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Project {
   id: number;
@@ -23,6 +23,16 @@ interface BentoProjectCardProps {
 
 export default function BentoProjectCard({ project, colSpanClass, index }: BentoProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const active = isHovered || isMobile;
 
   return (
     <motion.div
@@ -42,9 +52,9 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
         className="absolute inset-0 z-0 overflow-hidden bg-warm-cream cursor-pointer block"
       >
         <motion.div
-          animate={{ scale: isHovered ? 1.05 : 1.15, filter: isHovered ? "blur(0px)" : "blur(8px)" }}
+          animate={{ scale: active ? 1.05 : 1.15, filter: active ? "blur(0px)" : "blur(8px)" }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="w-full h-full relative opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          className={`w-full h-full relative transition-opacity duration-700 ${active ? 'opacity-100' : 'opacity-0'}`}
         >
           <div className={`absolute inset-0 bg-gradient-to-br ${project.imageGradient} mix-blend-multiply opacity-60`} />
           <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
@@ -54,7 +64,7 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
       {/* Dark Overlay for Text Readability (Appears on Hover) - pointer events none so clicks pass to image */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
+        animate={{ opacity: active ? 1 : 0 }}
         transition={{ duration: 0.5 }}
         className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/80 to-black/10 pointer-events-none"
       />
@@ -62,24 +72,24 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
       {/* Content Container */}
       <div className="relative z-20 flex flex-col h-full justify-end pointer-events-none">
         {/* Number Badge */}
-        <div className={`absolute top-0 right-0 font-serif italic text-4xl font-bold transition-colors duration-500 pointer-events-auto ${isHovered ? 'text-white/30' : 'text-warm-taupe/30'}`}>
+        <div className={`absolute top-0 right-0 font-serif italic text-4xl font-bold transition-colors duration-500 pointer-events-auto ${active ? 'text-white/30' : 'text-warm-taupe/30'}`}>
           0{project.id}
         </div>
 
         {/* Title */}
-        <h3 className={`font-serif italic text-4xl md:text-5xl font-bold leading-tight mb-4 transition-colors duration-500 pointer-events-auto ${isHovered ? 'text-white' : 'text-warm-ink'}`}>
+        <h3 className={`font-serif italic text-4xl md:text-5xl font-bold leading-tight mb-4 transition-colors duration-500 pointer-events-auto ${active ? 'text-white' : 'text-warm-ink'}`}>
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className={`text-sm md:text-base font-medium leading-relaxed max-w-xl transition-colors duration-500 mb-6 line-clamp-3 pointer-events-auto ${isHovered ? 'text-gray-200' : 'text-warm-charcoal/90'}`}>
+        <p className={`text-sm md:text-base font-medium leading-relaxed max-w-xl transition-colors duration-500 mb-6 line-clamp-3 pointer-events-auto ${active ? 'text-gray-200' : 'text-warm-charcoal/90'}`}>
           {project.description}
         </p>
 
         {/* Problem / Solution (Only visible on hover) */}
         <motion.div 
           initial={{ height: 0, opacity: 0 }}
-          animate={{ height: isHovered ? 'auto' : 0, opacity: isHovered ? 1 : 0 }}
+          animate={{ height: active ? 'auto' : 0, opacity: active ? 1 : 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="overflow-hidden"
         >
@@ -103,19 +113,19 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
             {project.tags.slice(0, 4).map((tag) => (
               <span 
                 key={tag} 
-                className={`text-xs px-3 py-1 rounded-full font-bold transition-colors duration-500 ${isHovered ? 'bg-white/20 text-white backdrop-blur-md' : 'bg-warm-paper text-warm-ink border border-warm-sand'}`}
+                className={`text-xs px-3 py-1 rounded-full font-bold transition-colors duration-500 ${active ? 'bg-white/20 text-white backdrop-blur-md' : 'bg-warm-paper text-warm-ink border border-warm-sand'}`}
               >
                 {tag}
               </span>
             ))}
             {project.tags.length > 4 && (
-              <span className={`text-xs px-2 py-1 rounded-full font-bold transition-colors duration-500 ${isHovered ? 'text-white/70' : 'text-warm-taupe'}`}>
+              <span className={`text-xs px-2 py-1 rounded-full font-bold transition-colors duration-500 ${active ? 'text-white/70' : 'text-warm-taupe'}`}>
                 +{project.tags.length - 4}
               </span>
             )}
           </div>
           
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className={`text-sm tracking-widest uppercase font-bold flex items-center gap-2 pointer-events-auto transition-colors duration-500 ${isHovered ? 'text-white hover:text-terracotta-light' : 'text-terracotta hover:text-terracotta'}`}>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className={`text-sm tracking-widest uppercase font-bold flex items-center gap-2 pointer-events-auto transition-colors duration-500 ${active ? 'text-white hover:text-terracotta-light' : 'text-terracotta hover:text-terracotta'}`}>
             Explore <span className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
           </a>
         </div>
