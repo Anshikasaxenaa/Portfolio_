@@ -30,7 +30,7 @@ export default function About() {
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
 
   return (
-    <section id="about" className="relative w-full overflow-hidden bg-warm-paper">
+    <section id="about" className="relative w-full overflow-hidden">
       
       {/* BAND 1: The Portrait & Statement */}
       <div className="min-h-[90vh] max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 relative">

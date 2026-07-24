@@ -6,7 +6,7 @@ import BentoProjectCard from "./ui/BentoProjectCard";
 
 export default function ProjectSection() {
   return (
-    <section id="work" className="py-24 md:py-32 relative overflow-hidden bg-warm-paper">
+    <section id="work" className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}

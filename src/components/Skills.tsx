@@ -25,7 +25,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 md:py-32 bg-warm-paper">
+    <section id="skills" className="py-24 md:py-32">
       
       {/* Animated Marquee Strip */}
       <div className="py-10 border-y border-warm-sand bg-warm-cream/50 overflow-hidden flex mb-24">

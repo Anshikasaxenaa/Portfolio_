@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   return (
-    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden bg-warm-paper">
+    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute bottom-0 right-0 w-3/4 h-1/2 bg-sage/10 rounded-[100%] blur-3xl -z-10 pointer-events-none" />
 

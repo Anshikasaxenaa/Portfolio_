@@ -10,9 +10,7 @@ import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <main className="relative bg-warm-paper bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(194,109,77,0.1),rgba(255,255,255,0))] overflow-hidden">
-      {/* Dot Grid Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(#8c8279_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+    <main className="relative bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(194,109,77,0.1),rgba(255,255,255,0))] overflow-hidden">
       
       <CustomCursor />
       <Navbar />
