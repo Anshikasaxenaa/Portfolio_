@@ -161,9 +161,30 @@ export const achievementsData = [
 export const certificationsData = [
   {
     id: 1,
-    title: "Your Certification Title Here",
-    issuer: "Issuing Organization",
-    date: "2025",
-    details: "Add details about your certification here."
+    title: "Software Engineering Job Simulation",
+    issuer: "JPMorgan Chase & Co. via Forage",
+    date: "Dec 2025",
+    details: "Completed practical tasks in Project Setup, Kafka Integration, H2 Integration, and REST API development."
+  },
+  {
+    id: 2,
+    title: "MongoDB Skill: CRUD Operations",
+    issuer: "MongoDB",
+    date: "Sep 2025",
+    details: "Demonstrated proficiency in executing Create, Read, Update, and Delete operations in MongoDB."
+  },
+  {
+    id: 3,
+    title: "Artificial Intelligence",
+    issuer: "Infosys Springboard",
+    date: "Jun 2025",
+    details: "Successfully completed the comprehensive Artificial Intelligence course."
+  },
+  {
+    id: 4,
+    title: "Problem Solving Through Programming in C",
+    issuer: "NPTEL (IIT Kharagpur)",
+    date: "Oct 2024",
+    details: "Completed the 12-week NPTEL Online Certification course."
   }
 ];
