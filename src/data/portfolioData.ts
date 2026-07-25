@@ -147,3 +147,23 @@ export const aboutContent = {
     statLabel: "DSA problems solved across competitive coding platforms.",
   },
 };
+
+export const achievementsData = [
+  {
+    id: 1,
+    title: "170+ LeetCode Problems Solved",
+    organization: "LeetCode",
+    date: "Current",
+    details: "Strengthened problem-solving, algorithms, and data structure skills using Java."
+  }
+];
+
+export const certificationsData = [
+  {
+    id: 1,
+    title: "Your Certification Title Here",
+    issuer: "Issuing Organization",
+    date: "2025",
+    details: "Add details about your certification here."
+  }
+];

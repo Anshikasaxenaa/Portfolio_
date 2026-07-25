@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experienceData, educationData } from "@/data/portfolioData";
-import { FaGraduationCap, FaBriefcase } from "react-icons/fa6";
+import { experienceData, educationData, achievementsData, certificationsData } from "@/data/portfolioData";
+import { FaGraduationCap, FaBriefcase, FaAward } from "react-icons/fa6";
 
 export default function Experience() {
   return (
@@ -124,6 +124,54 @@ export default function Experience() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Achievements & Certifications */}
+            <div className="flex items-center gap-4 mt-16 mb-8">
+              <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center text-xl">
+                <FaAward />
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-warm-ink">Certifications & Achievements</h3>
+            </div>
+            
+            <div className="space-y-8 relative">
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                style={{ originY: 0 }}
+                className="absolute left-6 top-0 bottom-0 w-px bg-warm-sand/50 z-0" 
+              />
+              {[...certificationsData, ...achievementsData].map((item, index) => (
+                <motion.div
+                  key={`ach-${item.id}-${index}`}
+                  initial={{ opacity: 0, x: 40, rotateX: 45 }}
+                  whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
+                  viewport={{ once: false, margin: "-100px" }}
+                  transition={{ duration: 1, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transformOrigin: "top" }}
+                  className="relative z-10 pl-16"
+                >
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.8 + index * 0.15 }}
+                    className="absolute left-4 top-2 w-4 h-4 rounded-full bg-warm-paper border-4 border-blue-500" 
+                  />
+                  <div className="bg-warm-cream border border-warm-sand p-8 rounded-3xl hover:border-blue-500/50 transition-colors shadow-sm">
+                    <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-700 text-sm font-semibold rounded-full mb-4">
+                      {item.date}
+                    </span>
+                    <h4 className="text-xl font-bold text-warm-ink mb-1">{item.title}</h4>
+                    <p className="text-warm-taupe font-medium mb-4">{(item as any).issuer || (item as any).organization}</p>
+                    <p className="text-warm-charcoal text-sm leading-relaxed">
+                      {item.details}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
