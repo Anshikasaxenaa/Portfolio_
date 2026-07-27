@@ -39,7 +39,7 @@ export default function Hero() {
           Hi, I&apos;m Anshika Saxena.
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-2 sm:gap-x-4">
           <HoverRevealText text="I craft digital experiences" />
           <HoverRevealText text="at the intersection of" />
           <HoverRevealText text="design and code." className="text-terracotta" />

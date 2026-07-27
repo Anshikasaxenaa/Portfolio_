@@ -32,7 +32,7 @@ export default function Experience() {
               <h3 className="text-2xl font-heading font-bold text-warm-ink">Work Experience</h3>
             </div>
             
-            <div className="space-y-8 relative before:absolute before:inset-0 before:ml-[1.4rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-warm-sand before:to-transparent hidden-before">
+            <div className="space-y-8 relative">
               <motion.div 
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}

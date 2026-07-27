@@ -77,7 +77,7 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
         </div>
 
         {/* Title */}
-        <h3 className={`font-serif italic text-4xl md:text-5xl font-bold leading-tight mb-4 transition-colors duration-500 pointer-events-auto ${active ? 'text-white' : 'text-warm-ink'}`}>
+        <h3 className={`font-serif italic text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 transition-colors duration-500 pointer-events-auto ${active ? 'text-white' : 'text-warm-ink'}`}>
           {project.title}
         </h3>
 
