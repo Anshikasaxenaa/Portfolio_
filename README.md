@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Anshikasaxenaa/anshika-saxena-portfolio/main/public/profile.png" alt="Anshika Saxena Logo" width="120" height="120" style="border-radius: 50%; border: 4px solid #c26d4d;">
+  <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Anshika&backgroundColor=f3efe8" alt="Anshika Saxena Logo" width="120" height="120" style="border-radius: 50%; border: 4px solid #c26d4d;">
   
   <h1 align="center">Anshika Saxena — Portfolio</h1>
 
