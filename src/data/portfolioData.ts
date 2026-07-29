@@ -57,7 +57,7 @@ export const projects = [
     image: "/project-4.png", 
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     githubLink: "https://github.com/Anshikasaxenaa",
-    liveLink: "",
+    liveLink: "https://imageanimate.netlify.app",
   }
 ];
 
