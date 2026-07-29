@@ -175,7 +175,7 @@ export const projects: Project[] = [
   },
   {
     id:      "image-animation",
-    title:   "Image Animation",
+    title:   "ImageAnimate",
     tagline: "Engaging interactive card components that come to life.",
     problem: "Static text lacks engagement, requiring captivating animations to improve user interaction.",
     solution: "Developed interactive card components with stunning hover and click effects to bring text animations to life.",
@@ -189,6 +189,7 @@ export const projects: Project[] = [
       "Stunning hover and click interactive effects",
     ],
     githubUrl: "https://github.com/Anshikasaxenaa",
+    liveUrl: "https://imageanimate.netlify.app",
     imageUrl:  "/projects/project3.png",
     featured:  false,
     color:     "from-pink-500/20 to-purple-500/20",
