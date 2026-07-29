@@ -85,7 +85,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-b from-warm-sand via-terracotta-subtle to-warm-cream opacity-50 mix-blend-multiply" />
                 
                 {/* Real Image placeholder (assuming you replace /profile.png) */}
-                <img src="/profile.png" alt="Portrait" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80" />
+                <img src="/profile.jpeg" alt="Portrait" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80" />
 
                 {/* Grain Overlay */}
                 <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-30 mix-blend-overlay">
