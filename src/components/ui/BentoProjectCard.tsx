@@ -12,7 +12,8 @@ interface Project {
   tags: string[];
   image: string;
   imageGradient: string;
-  link: string;
+  githubLink?: string;
+  liveLink?: string;
 }
 
 interface BentoProjectCardProps {
@@ -46,7 +47,7 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
     >
       {/* Background Image Container (Clickable) */}
       <a 
-        href={project.link}
+        href={project.liveLink || project.githubLink || "#"}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 z-0 overflow-hidden bg-warm-cream cursor-pointer block"
@@ -121,10 +122,18 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
               </span>
             )}
           </div>
-          
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className={`text-sm tracking-widest uppercase font-bold flex items-center gap-2 pointer-events-auto transition-colors duration-500 ${active ? 'text-white hover:text-terracotta-light' : 'text-terracotta hover:text-terracotta'}`}>
-            Explore <span className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-          </a>
+          <div className="flex gap-4 sm:gap-6 pointer-events-auto">
+            {project.githubLink && (
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`text-sm tracking-widest uppercase font-bold flex items-center gap-2 transition-colors duration-500 ${active ? 'text-white hover:text-terracotta-light' : 'text-terracotta hover:text-terracotta'}`}>
+                GitHub <span className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </a>
+            )}
+            {project.liveLink && (
+              <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={`text-sm tracking-widest uppercase font-bold flex items-center gap-2 transition-colors duration-500 ${active ? 'text-white hover:text-terracotta-light' : 'text-terracotta hover:text-terracotta'}`}>
+                Live <span className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>

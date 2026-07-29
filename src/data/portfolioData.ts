@@ -8,7 +8,8 @@ export const projects = [
     tags: ["Next.js", "React", "TypeScript", "Node.js", "Express.js", "MongoDB", "JWT", "Google OAuth", "Gemini AI", "Tailwind CSS"],
     image: "/project-5.png",
     imageGradient: "from-blue-500 via-cyan-500 to-indigo-600",
-    link: "https://docu-wise-dusky.vercel.app",
+    githubLink: "https://github.com/Anshikasaxenaa",
+    liveLink: "https://docu-wise-dusky.vercel.app",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ export const projects = [
     tags: ["React", "Node.js", "Express", "MongoDB", "AI APIs"],
     image: "/project-1.png", 
     imageGradient: "from-terracotta-subtle via-warm-cream to-sage-light",
-    link: "https://github.com/Anshikasaxenaa/careerpilot-ai",
+    githubLink: "https://github.com/Anshikasaxenaa/careerpilot-ai",
+    liveLink: "",
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ export const projects = [
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
     image: "/project-2.png", 
     imageGradient: "from-warm-cream via-terracotta-subtle to-warm-sand",
-    link: "https://anshika-saxena-portfolio.vercel.app",
+    githubLink: "https://github.com/Anshikasaxenaa/portfolio",
+    liveLink: "https://anshika-saxena-portfolio.vercel.app",
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ export const projects = [
     tags: ["React", "Node.js", "MongoDB", "ImageKit"],
     image: "/project-3.png", 
     imageGradient: "from-sage-light via-warm-cream to-terracotta-subtle",
-    link: "https://github.com/Anshikasaxenaa/Post_app",
+    githubLink: "https://github.com/Anshikasaxenaa/Post_app",
+    liveLink: "",
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     image: "/project-4.png", 
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
-    link: "https://github.com/Anshikasaxenaa",
+    githubLink: "https://github.com/Anshikasaxenaa",
+    liveLink: "",
   }
 ];
 
