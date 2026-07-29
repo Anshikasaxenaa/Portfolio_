@@ -80,7 +80,7 @@ export default function Contact() {
                 {[
                   { label: "GitHub", href: "https://github.com/Anshikasaxenaa", icon: FaGithub },
                   { label: "LinkedIn", href: "https://linkedin.com/in/anshika-saxena-87119a267", icon: FaLinkedin },
-                  { label: "Twitter / X", href: "#", icon: FaXTwitter },
+                  // { label: "Twitter / X", href: "#", icon: FaXTwitter },
                 ].map((social) => (
                   <MagneticElement key={social.label} strength={15}>
                     <motion.a
