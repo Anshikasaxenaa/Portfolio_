@@ -71,10 +71,7 @@ export default function BentoProjectCard({ project, colSpanClass, index }: Bento
 
       {/* Content Container */}
       <div className="relative z-20 flex flex-col h-full justify-end pointer-events-none">
-        {/* Number Badge */}
-        <div className={`absolute top-0 right-0 font-serif italic text-4xl font-bold transition-colors duration-500 pointer-events-auto ${active ? 'text-white/30' : 'text-warm-taupe/30'}`}>
-          0{project.id}
-        </div>
+
 
         {/* Title */}
         <h3 className={`font-serif italic text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 transition-colors duration-500 pointer-events-auto ${active ? 'text-white' : 'text-warm-ink'}`}>
