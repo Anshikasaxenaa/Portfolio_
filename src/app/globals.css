@@ -5,9 +5,11 @@
 @layer base {
   body {
     @apply bg-warm-paper text-warm-charcoal font-body overflow-x-hidden selection:bg-terracotta-subtle selection:text-terracotta-dark;
-    background-image: radial-gradient(theme('colors.warm-sand') 1.5px, transparent 1.5px);
-    background-size: 32px 32px;
-    background-position: -1.5px -1.5px;
+    background-image: 
+      radial-gradient(theme('colors.warm-sand') 1.5px, transparent 1.5px),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    background-size: 32px 32px, 150px 150px;
+    background-position: -1.5px -1.5px, 0 0;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tighter text-warm-ink;
@@ -30,5 +32,11 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }
