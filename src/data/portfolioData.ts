@@ -13,6 +13,18 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Katacut",
+    description: "Description for your Katacut project. Please update this text.",
+    problem: "Problem statement for Katacut.",
+    solution: "Solution for Katacut.",
+    tags: ["React", "Next.js", "Tailwind CSS"],
+    image: "/project-1.png", 
+    imageGradient: "from-purple-500 via-pink-500 to-red-500",
+    githubLink: "",
+    liveLink: "",
+  },
+  {
+    id: 3,
     title: "PrepAI - AI-Powered Interview Platform",
     description: "An intelligent mock interview platform using large language models. It provides real-time feedback, analyzes facial expressions, and generates dynamic technical questions based on the candidate's resume.",
     problem: "Candidates often struggle with interview anxiety and lack realistic, personalized practice environments before crucial job interviews.",
@@ -24,7 +36,7 @@ export const projects = [
     liveLink: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Portfolio Website",
     description: "A meticulously crafted personal portfolio showcasing advanced Framer Motion animations, a warm editorial design aesthetic, and performant server-side rendering.",
     problem: "Standard portfolios often feel static and fail to communicate a developer's unique design sensibilities and engineering rigor.",
@@ -36,7 +48,7 @@ export const projects = [
     liveLink: "https://anshika-saxena-portfolio.vercel.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "Post App",
     description: "A full-stack social media application enabling users to share visual stories. Features secure authentication, real-time image processing, and a highly responsive masonry layout.",
     problem: "Users needed a highly responsive, secure platform to share visual stories without compromising on image load times or layout stability.",
@@ -48,7 +60,7 @@ export const projects = [
     liveLink: "",
   },
   {
-    id: 5,
+    id: 6,
     title: "Image Animation",
     description: "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
     problem: "Modern web interfaces require fluid, non-intrusive micro-interactions, but relying on heavy animation libraries can severely impact performance.",
