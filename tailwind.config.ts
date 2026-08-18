@@ -12,6 +12,19 @@ const config: Config = {
         heading: ['var(--font-space-grotesk)', 'sans-serif'],
         body: ['var(--font-inter)', 'sans-serif'],
       },
+      fontSize: {
+        xs: ['clamp(0.7rem, 0.7vw + 0.5rem, 0.875rem)', { lineHeight: '1.5' }],
+        sm: ['clamp(0.8rem, 0.8vw + 0.6rem, 1rem)', { lineHeight: '1.5' }],
+        base: ['clamp(0.95rem, 1vw + 0.7rem, 1.125rem)', { lineHeight: '1.5' }],
+        lg: ['clamp(1.05rem, 1.2vw + 0.8rem, 1.25rem)', { lineHeight: '1.75' }],
+        xl: ['clamp(1.15rem, 1.5vw + 0.9rem, 1.5rem)', { lineHeight: '1.75' }],
+        '2xl': ['clamp(1.3rem, 2vw + 1rem, 2rem)', { lineHeight: '1.2' }],
+        '3xl': ['clamp(1.6rem, 2.5vw + 1.2rem, 2.5rem)', { lineHeight: '1.2' }],
+        '4xl': ['clamp(2rem, 3.5vw + 1.5rem, 3.5rem)', { lineHeight: '1.1' }],
+        '5xl': ['clamp(2.5rem, 5vw + 2rem, 4.5rem)', { lineHeight: '1.1' }],
+        '6xl': ['clamp(3rem, 7vw + 2.5rem, 6rem)', { lineHeight: '1.1' }],
+        '7xl': ['clamp(3.5rem, 9vw + 3rem, 8rem)', { lineHeight: '1' }],
+      },
       colors: {
         warm: {
           paper:    '#faf7f2',  // Main background
