@@ -70,6 +70,18 @@ export const projects = [
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     githubLink: "https://github.com/Anshikasaxenaa",
     liveLink: "https://imageanimate.netlify.app",
+  },
+  {
+    id: 7,
+    title: "Cloud Collection",
+    description: "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
+    problem: "Modern web interfaces require fluid, non-intrusive micro-interactions, but relying on heavy animation libraries can severely impact performance.",
+    solution: "An experimental frontend interface built from scratch to orchestrate complex CSS and JavaScript transitions, ensuring optimal rendering speed.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: "/project-4.png", 
+    // imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
+    githubLink: "https://github.com/Anshikasaxenaa/Cloud-Collector",
+    // liveLink: "https://imageanimate.netlify.app",
   }
 ];
 
@@ -81,15 +93,27 @@ export const experienceData = [
     title: "Agentic AI Intern",
     company: "Grras Solutions (P) Ltd",
     location: "Jaipur, Rajasthan",
-    date: "June 2026 - Current",
+    date: "June 2026 - July",
     points: [
       "Built AI-powered assistants capable of multi-step reasoning and task execution.",
       "Integrated LLM APIs and automation workflows into intelligent applications.",
       "Collaborated on scalable AI-driven software solutions."
     ]
   },
-  {
+    {
     id: 2,
+    title: "Software Engineer intern",
+    company: "Nextron Infotech pvt Ltd.",
+    location: "Gorakhpur, Uttar Pradesh",
+    date: "August 2026 - Current",
+    points: [
+          "Developed and refined a full-stack login/authentication page with frontend and backend integration.",
+          "Implemented and tested user authentication workflows, including form validation, API integration, and error handling.",
+          "Worked with Git/GitHub and Docker Desktop, while debugging issues and improving the application based on feedback."
+    ]
+  },
+  {
+    id: 3,
     title: "Fullstack developer",
     company: "Cognifyz",
     location: "Remote",
