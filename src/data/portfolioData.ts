@@ -110,13 +110,20 @@ export const projects = [
     id: 7,
     title: "Cloud Collection",
     description:
-      "An experimental frontend interface exploring complex CSS and JavaScript animations. Focuses on orchestrating fluid transitions and micro-interactions without heavy libraries.",
+      "An interactive sticker collection system that transforms simple emoji clicks into a symphony of cascading animations, particle effects, and state-driven micro-interactions. Built entirely with vanilla web technologies to demonstrate the power of modern CSS and JavaScript animation orchestration.",
     problem:
-      "Modern web interfaces require fluid, non-intrusive micro-interactions, but relying on heavy animation libraries can severely impact performance.",
+      "Modern web experiences demand sophisticated, performance-conscious micro-interactions that feel natural and delightful. However, most developers default to heavy animation libraries (GSAP, Framer Motion, etc.) that add significant bundle weight, create framework lock-in, and often introduce jank through inefficient DOM manipulation — especially problematic for collection-based interfaces where multiple elements animate simultaneously.",
     solution:
-      "An experimental frontend interface built from scratch to orchestrate complex CSS and JavaScript transitions, ensuring optimal rendering speed.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/project-7.png",
+      "A lightweight, framework-agnostic animation system that leverages CSS custom properties, hardware-accelerated transforms, and requestAnimationFrame for smooth 60fps interactions. The architecture decouples animation logic from state management, enabling complex sequences (bounce + glow + particle bursts + confetti) through pure CSS keyframes and JavaScript-driven class toggles. All animations are GPU-accelerated and optimized for paint/composite performance.",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CSS Animations",
+      "Canvas API",
+      "Micro-interactions",
+    ],
+    image: "/project-4.png",
     imageGradient: "from-warm-sand via-terracotta-subtle to-sage-light",
     githubLink: "https://github.com/Anshikasaxenaa/Cloud-Collector",
     // liveLink: "https://imageanimate.netlify.app",

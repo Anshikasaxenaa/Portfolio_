@@ -6,8 +6,8 @@ import HoverRevealText from "./ui/HoverRevealText";
 
 export default function Hero() {
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
       {/* Breathing Animated Orb Background */}
@@ -20,7 +20,9 @@ export default function Hero() {
           }}
           transition={{ duration: 12, ease: "easeInOut", repeat: Infinity }}
           className="w-full h-full rounded-full blur-3xl opacity-[0.08]"
-          style={{ background: "radial-gradient(circle, #c26d4d 0%, #7d9b7e 100%)" }}
+          style={{
+            background: "radial-gradient(circle, #c26d4d 0%, #7d9b7e 100%)",
+          }}
         />
       </div>
 
@@ -30,7 +32,7 @@ export default function Hero() {
           Available for new opportunities
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -39,12 +41,15 @@ export default function Hero() {
           Hi, I&apos;m Anshika Saxena.
         </motion.div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-2 sm:gap-x-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 flex flex-wrap justify-center gap-x-2 sm:gap-x-4">
           <HoverRevealText text="I craft digital experiences" />
           <HoverRevealText text="at the intersection of" />
-          <HoverRevealText text="design and code." className="text-terracotta" />
+          <HoverRevealText
+            text="design and code."
+            className="text-terracotta"
+          />
         </h1>
-        
+
         <p className="text-warm-taupe text-xl md:text-2xl font-medium max-w-2xl mb-10">
           Software Engineer & Full Stack Developer
         </p>
